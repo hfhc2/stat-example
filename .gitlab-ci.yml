@@ -1,0 +1,16 @@
+knit_rnw_to_tex:
+  image: rocker/verse:4.0.0
+  script:
+  - Rscript -e "knitr::knit('article.Rnw')"
+  artifacts:
+    paths:
+      - ./*.tex
+      - figure/
+
+compile_pdf:
+  image: aergus/latex
+  script:
+  - latexmk -pdf -bibtex -use-make article.tex
+  artifacts:
+    paths:
+      - article.pdf

@@ -1,0 +1,17 @@
+\documentclass[a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{bbm}
+\usepackage{amssymb,amsmath,amsthm}
+
+\begin{document}
+
+<<my-label, eval=TRUE, dev='png'>>=
+set.seed(1213)  # for reproducibility
+x = cumsum(rnorm(100))
+mean(x)  # mean of x
+plot(x, type = 'l')  # Brownian motion
+@
+
+\end{document}
